@@ -10,8 +10,10 @@ import six
 from .constants import XERO_API_URL
 from .exceptions import *
 
+
 def isplural(word):
     return word[-1].lower() == 's'
+
 
 def singular(word):
     if isplural(word):
