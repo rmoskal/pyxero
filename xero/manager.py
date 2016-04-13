@@ -158,7 +158,7 @@ class Manager(object):
 
             # If our key is repeated in our child object, but in singular
             # form (and is the only key), then this object is a collection.
-            if isplural(key) and [singular(key)] == data.keys():
+            if not key == 'Details' and isplural(key) and [singular(key)] == data.keys():
                 data = [data[singular(key)]]
 
             out[key] = data
