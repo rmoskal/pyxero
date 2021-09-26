@@ -410,7 +410,7 @@ class Manager(object):
             # Treat any remaining arguments as filter predicates
             # Xero will break if you search without a check for null in the first position:
             # http://developer.xero.com/documentation/getting-started/http-requests-and-responses/#title3
-            sortedkwargs = sorted(six.iteritems(kwargs),
+            sortedkwargs = sorted(six.items(kwargs),
                     key=lambda item: -1 if 'isnull' in item[0] else 0)
             filter_params = [generate_param(key, value) for key, value in sortedkwargs]
             if filter_params:
